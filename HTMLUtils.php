@@ -9,9 +9,18 @@ class HTMLUtils
       $tableString = "<table>";
 	      for ($row = 0; $row < count($ray); $row++) 
 	      {
-	      	$tableString .= "<tr>";
+	      	
+	      		$tableString .= "<tr>";
+	      	
 	      	for ($col = 0; $col < count($ray[$row]); $col++) {
-	      		$tableString .= "<td>" . $ray[$row][$col] . "</td>";
+	      		if ($row == 0)
+	      		{
+	      			$tableString .= "<th>" . $ray[$row][$col] . "</th>";
+	      		}
+	      		else
+	      		{
+	      			$tableString .= "<td>" . $ray[$row][$col] . "</td>";
+	      		}
 	      	}
 	      	$tableString .= "</tr>";
 	      }
